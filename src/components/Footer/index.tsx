@@ -1,11 +1,13 @@
 import React from 'react'
 
-import { Container } from './styled'
+import { Container, TextFooter } from './styled'
 
 const Footer:React.FC = () => {
   return (
     <Container>
-      Footer
+      <TextFooter>
+        MKS sistemas © Todos os direitos reservados
+      </TextFooter>
     </Container>
   )
 }

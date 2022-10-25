@@ -3,6 +3,10 @@ import styled from "styled-components"
 export const Container = styled.div`
   display: flex;
 
+  position: fixed;
+  top: 0;
+
+  width: 100%;
   height: 101px;
   background-color: #0F52BA;
 
