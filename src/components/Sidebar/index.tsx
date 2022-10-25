@@ -1,25 +1,68 @@
 import React from 'react'
-import { Container } from './styled'
+import { 
+  Container,
+  ContainerHeader,
+  Title,
+  Button,
+  ListProducts,
+  Image,
+  ItemProduct,
+  Description,
+  ContainerActions,
+  Quantity,
+  Price,
+  ContentAmount,
+  Amount,
+  Close,
+  AmountTitle,
+  ListFooter,
+  ContentBody
+} from './styled'
+
 
 const Sidebar:React.FC = () => {
   return (
     <Container>
-      <h1>carrinho de compras</h1>
-      <span>x</span>
+      <ContentBody>
+        <ContainerHeader>
+          <Title>
+            carrinho de compras
+          </Title>
+          <Close onClick={() => {}}>
+            x
+          </Close>
+        </ContainerHeader>
 
+        <ListProducts>
+        
+          {['1','2','3'].map((i, idx) => (
+            <ItemProduct key={idx}>
+              <Image />
+              <Description></Description>
+              <ContainerActions>
+                <Button></Button>
+                <Quantity></Quantity>
+                <Button></Button>
+              </ContainerActions>
+              <Price></Price>
+            </ItemProduct>
+          ))}
+        
+        </ListProducts>
 
-      <div>
-        <h1>title</h1>
-      </div>
+      </ContentBody>
 
-      <div>
-        <h1>title</h1>
-      </div>
-
-      <h3>total</h3>
-      <span>r$789</span>
-
-      <button>FINALIZAR COMPRA</button>
+      <ContentAmount>
+        <AmountTitle>total</AmountTitle>
+        <Amount>R$789</Amount>
+      </ContentAmount>
+      
+      <ListFooter>
+        <Button>
+          FINALIZAR COMPRA
+        </Button>
+      </ListFooter>
+      
     </Container>
   )
 }
