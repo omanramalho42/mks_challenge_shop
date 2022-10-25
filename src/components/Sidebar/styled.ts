@@ -1,6 +1,10 @@
 import styled from "styled-components"
 
-export const Container = styled.div`
+interface SidebarProps {
+  show: boolean;
+}
+
+export const Container = styled.div<SidebarProps>`
   display: flex;
   flex-direction: column;
 
@@ -19,6 +23,26 @@ export const Container = styled.div`
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
   
   transition: 0.325s;
+  
+  animation: ${({ show }) => show ? 'moveShow' : 'moveClose'} 0.468s linear both alternate;
+
+  @keyframes moveShow {
+    0% {
+        transform: translateX(30vw);
+    }
+    100% {
+        transform:translateX(0vw);
+    }
+  }
+
+  @keyframes moveClose {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform:translateX(38vw);
+    }
+  }
   `;
 
 export const ContentBody = styled.div`

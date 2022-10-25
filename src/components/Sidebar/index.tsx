@@ -19,51 +19,57 @@ import {
   ContentBody
 } from './styled'
 
+interface SidebarProps {
+  showMenu?: boolean;
+  closeSidebar: () => void;
+}
 
-const Sidebar:React.FC = () => {
+const Sidebar= ({ showMenu = false, closeSidebar }: SidebarProps) => {
   return (
-    <Container>
-      <ContentBody>
-        <ContainerHeader>
-          <Title>
-            carrinho de compras
-          </Title>
-          <Close onClick={() => {}}>
-            x
-          </Close>
-        </ContainerHeader>
+    <>
+      <Container show={showMenu}>
+        <ContentBody>
+          <ContainerHeader>
+            <Title>
+              carrinho de compras
+            </Title>
+            <Close onClick={closeSidebar}>
+              x
+            </Close>
+          </ContainerHeader>
 
-        <ListProducts>
+          <ListProducts>
+          
+            {['1','2','3'].map((i, idx) => (
+              <ItemProduct key={idx}>
+                <Image />
+                <Description></Description>
+                <ContainerActions>
+                  <Button></Button>
+                  <Quantity></Quantity>
+                  <Button></Button>
+                </ContainerActions>
+                <Price></Price>
+              </ItemProduct>
+            ))}
+          
+          </ListProducts>
+
+        </ContentBody>
+
+        <ContentAmount>
+          <AmountTitle>total</AmountTitle>
+          <Amount>R$789</Amount>
+        </ContentAmount>
         
-          {['1','2','3'].map((i, idx) => (
-            <ItemProduct key={idx}>
-              <Image />
-              <Description></Description>
-              <ContainerActions>
-                <Button></Button>
-                <Quantity></Quantity>
-                <Button></Button>
-              </ContainerActions>
-              <Price></Price>
-            </ItemProduct>
-          ))}
+        <ListFooter>
+          <Button>
+            FINALIZAR COMPRA
+          </Button>
+        </ListFooter>
         
-        </ListProducts>
-
-      </ContentBody>
-
-      <ContentAmount>
-        <AmountTitle>total</AmountTitle>
-        <Amount>R$789</Amount>
-      </ContentAmount>
-      
-      <ListFooter>
-        <Button>
-          FINALIZAR COMPRA
-        </Button>
-      </ListFooter>
-      
-    </Container>
+      </Container>
+  </>
   )
 }
 

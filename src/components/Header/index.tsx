@@ -18,9 +18,10 @@ const Header:React.FC = () => {
         <FaShoppingCart />
         <p style={{ cursor: 'pointer' }}>0</p>
       </CartContent>
-      {showMenu && (
-        <Sidebar />
-      )}
+      <Sidebar
+        showMenu={showMenu} 
+        closeSidebar={() => setShowMenu((value) => !value)} 
+      />
     </Container>
   )
 }
