@@ -1,10 +1,17 @@
 import React from 'react'
 
-import { Container } from './styled'
+import { CartContent, Container, ContentLogo, Logo, LogoTitle } from './styled'
+
 const Header:React.FC = () => {
   return (
     <Container>
-      Header
+      <ContentLogo>
+        <Logo>MKS</Logo> <LogoTitle>Sistemas</LogoTitle>
+      </ContentLogo>
+      <CartContent>
+        cart
+        0
+      </CartContent>
     </Container>
   )
 }
