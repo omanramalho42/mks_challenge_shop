@@ -1,8 +1,12 @@
 import React from 'react'
 
+import { Container } from './styled'
+
 const Footer:React.FC = () => {
   return (
-    <div>Footer</div>
+    <Container>
+      Footer
+    </Container>
   )
 }
 

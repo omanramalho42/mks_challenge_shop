@@ -1,8 +1,11 @@
 import React from 'react'
 
+import { Container } from './styled'
 const Header:React.FC = () => {
   return (
-    <div>Header</div>
+    <Container>
+      Header
+    </Container>
   )
 }
 
