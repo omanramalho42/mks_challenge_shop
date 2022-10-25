@@ -44,13 +44,6 @@ export const Grid = styled.div`
     grid-row-gap: 51px;
   }
 
-  .thing::before {
-    opacity: 0;
-  }
-  .thing::after {
-    opacity: 1;
-  }
-  
   .thing {
     animation-name: rendering;
     animation-duration: 3s;
@@ -63,20 +56,20 @@ export const Grid = styled.div`
       opacity: 0;
     }
     100% {
-        width: 100%;
-        height: 100%;
-        opacity: 100%;
+      width: 100%;
+      height: 100%;
+      opacity: 100%;
     }
   }
 
-  .thing:nth-child(1) {animation-delay: 0.0s; }
+  /* .thing:nth-child(1) {animation-delay: 0.0s; }
   .thing:nth-child(2) {animation-delay: 0.5s; }
   .thing:nth-child(3) {animation-delay: 1.0s; }
   .thing:nth-child(4) {animation-delay: 1.5s; }
   .thing:nth-child(5) {animation-delay: 2.0s; }
   .thing:nth-child(6) {animation-delay: 2.5s; }
   .thing:nth-child(7) {animation-delay: 2.7s; }
-  .thing:nth-child(8) {animation-delay: 2.9s; }
+  .thing:nth-child(8) {animation-delay: 2.9s; } */
 `;
 
 export const Product = styled.div`

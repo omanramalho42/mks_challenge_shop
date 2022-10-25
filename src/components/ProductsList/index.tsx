@@ -22,7 +22,9 @@ interface ProductsListProps {
 
 const ProductsList = () => {
   const [products, setProducts] = useState<ProductsListProps[] | null>(null);
+  const [loading, setLoading] = useState<boolean>(false);
   useEffect(() => {
+    setLoading(true);
     const fakeProducts: ProductsListProps[] = [
       {
         title: 'Iphone 5g',
@@ -77,22 +79,35 @@ const ProductsList = () => {
     (async() => {
       await setProducts(fakeProducts); 
     })()
-  
   },[products]);
   
   return (
     <Container>
       <Grid>
         { products?.map((i,idx) => (
-        <div  className='thing'>
-          <Product key={idx}>
+          <Product 
+            className='thing' 
+            key={idx}
+          >
             <Content >
-              <ProductImage src={i.image} alt='' layout='responsive' width='100' height='100' />
+              <ProductImage 
+                src={i.image} 
+                alt='' 
+                layout='responsive' 
+                width='100' 
+                height='100' 
+              />
               <LinePriceTitle>
-                <ProductTitle>{i.title}</ProductTitle>
-                <Price>R$125</Price>
+                <ProductTitle>
+                  { i.title || ' ' }
+                </ProductTitle>
+                <Price>
+                  R$125
+                </Price>
               </LinePriceTitle>
-              <ProductDescription>{i.description}</ProductDescription>
+              <ProductDescription>
+                { i.description || ' ' }
+              </ProductDescription>
             </Content>
             <ContainerButton>
               <button>
@@ -100,7 +115,6 @@ const ProductsList = () => {
               </button>
             </ContainerButton>
           </Product>
-        </div>
         ))}
       </Grid>
     </Container>
