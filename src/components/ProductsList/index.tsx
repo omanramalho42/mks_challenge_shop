@@ -1,5 +1,17 @@
 import React, { useEffect, useState } from 'react'
-import { Container, Grid, Product, ContainerButton, ProductDescription, ProductImage, ProductTitle, Content, LinePriceTitle, Price } from './styled'
+
+import { 
+  Container, 
+  Grid, 
+  Product, 
+  ContainerButton, 
+  ProductDescription, 
+  ProductImage, 
+  ProductTitle, 
+  Content, 
+  LinePriceTitle, 
+  Price 
+} from './styled'
 
 interface ProductsListProps {
   title: string;
@@ -71,9 +83,10 @@ const ProductsList = () => {
   return (
     <Container>
       <Grid>
-        {products?.map((i,idx) => (
-          <Product>
-            <Content>
+        { products?.map((i,idx) => (
+        <div  className='thing'>
+          <Product key={idx}>
+            <Content >
               <ProductImage src={i.image} alt='' layout='responsive' width='100' height='100' />
               <LinePriceTitle>
                 <ProductTitle>{i.title}</ProductTitle>
@@ -87,6 +100,7 @@ const ProductsList = () => {
               </button>
             </ContainerButton>
           </Product>
+        </div>
         ))}
       </Grid>
     </Container>

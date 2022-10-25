@@ -1,15 +1,22 @@
 import type { NextPage } from 'next'
-import { useState } from 'react'
+import React, { Suspense } from 'react'
 
-import { Footer, Header, Layout, ProductsList } from '../components'
-import Sidebar from '../components/Sidebar'
+import { Footer, Header, Layout } from '../components'
+
+import dynamic from 'next/dynamic'
+
+const DynamicProductsList = dynamic(() => import('../components/ProductsList'), {
+  suspense: true,
+})
 
 const Home: NextPage = () => {
   
   return (
     <Layout title='home' description='Página inicial'>
       <Header />
-      <ProductsList />
+      <Suspense fallback={'Loading...'}>
+        <DynamicProductsList />
+      </Suspense>
       <Footer />
     </Layout>
   )

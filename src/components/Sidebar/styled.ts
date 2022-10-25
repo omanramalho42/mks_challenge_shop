@@ -12,7 +12,7 @@ export const Container = styled.div<SidebarProps>`
 
   position: absolute;
   top: 0;
-  right: 0;
+  right: ${({ show }) => show ? '0' : '-500px'};
 
   justify-content: space-between;
   
@@ -28,10 +28,10 @@ export const Container = styled.div<SidebarProps>`
 
   @keyframes moveShow {
     0% {
-        transform: translateX(30vw);
+      transform: translateX(500px);
     }
     100% {
-        transform:translateX(0vw);
+      transform:translateX(0vw);
     }
   }
 
@@ -40,7 +40,7 @@ export const Container = styled.div<SidebarProps>`
         transform: translateX(0);
     }
     100% {
-        transform:translateX(38vw);
+        transform:translateX(500px);
     }
   }
   `;

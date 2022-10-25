@@ -1,4 +1,5 @@
 import React from 'react'
+import EmptyCard from '../Cart/EmptyCard';
 import { 
   Container,
   ContainerHeader,
@@ -40,7 +41,7 @@ const Sidebar= ({ showMenu = false, closeSidebar }: SidebarProps) => {
 
           <ListProducts>
           
-            {['1','2','3'].map((i, idx) => (
+            {[''].map((i: any, idx) => i.length > 0 ? (
               <ItemProduct key={idx}>
                 <Image />
                 <Description></Description>
@@ -51,6 +52,8 @@ const Sidebar= ({ showMenu = false, closeSidebar }: SidebarProps) => {
                 </ContainerActions>
                 <Price></Price>
               </ItemProduct>
+            ) : ( 
+              <EmptyCard /> 
             ))}
           
           </ListProducts>
