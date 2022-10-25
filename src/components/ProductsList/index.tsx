@@ -77,12 +77,14 @@ const ProductsList = () => {
               <ProductImage src={i.image} alt='' layout='responsive' width='100' height='100' />
               <LinePriceTitle>
                 <ProductTitle>{i.title}</ProductTitle>
-                <Price>$ 125.63</Price>
+                <Price>R$125</Price>
               </LinePriceTitle>
               <ProductDescription>{i.description}</ProductDescription>
             </Content>
             <ContainerButton>
-              <button>COMPRAR</button>
+              <button>
+                COMPRAR
+              </button>
             </ContainerButton>
           </Product>
         ))}

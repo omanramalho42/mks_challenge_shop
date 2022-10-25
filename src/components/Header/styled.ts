@@ -44,16 +44,24 @@ export const LogoTitle = styled.h4`
 
 export const CartContent = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+
+  cursor: pointer;
 
   width: 90px;
   height: 45px;
 
   background: #FFFFFF;
   border-radius: 8px;
+  
+  padding: 0 10px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
   
   margin-right: 89px;
 `;
