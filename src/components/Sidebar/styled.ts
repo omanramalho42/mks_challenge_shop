@@ -85,7 +85,7 @@ export const Close = styled.button<CloseButtonProps>`
   text-align: center;
 
   font-style: normal;
-  font-weight: 400;
+  font-weight: 400;;
 
   color: #FFFFFF;
 `;
@@ -109,7 +109,7 @@ export const Button = styled.div`
 
   margin: auto;
   
-  padding: 39px 0;
+  padding: 30px 0;
 
   cursor: pointer;
   
