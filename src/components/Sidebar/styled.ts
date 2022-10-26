@@ -1,3 +1,4 @@
+import Image from "next/image";
 import styled from "styled-components"
 
 interface SidebarProps {
@@ -60,12 +61,19 @@ export const ContainerHeader = styled.div`
   justify-content: space-between;
 `;
 
-export const Close = styled.button`
+interface CloseButtonProps {
+  size: number;
+  fontSize: number;
+}
+
+export const Close = styled.button<CloseButtonProps>`
   display: flex;
   border-radius: 50%;
 
-  width: 38px;
-  height: 38px;
+  font-size: ${({ fontSize }) => fontSize}em;
+
+  width: ${({ size }) => size}px;
+  height: ${({ size }) => size}px;
 
   align-items: center;
   justify-content: center;
@@ -78,7 +86,6 @@ export const Close = styled.button`
 
   font-style: normal;
   font-weight: 400;
-  font-size: 28px;
 
   color: #FFFFFF;
 `;
@@ -113,6 +120,28 @@ export const Button = styled.div`
   color: #FFFFFF;
 `;
 
+export const ButtonAction = styled.button`
+  cursor: pointer;
+  
+  height: 19px;
+  padding: 0 7px;
+
+  margin: 1px;
+
+  border-radius: 5px;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+
+  color: #000000;
+
+  transition: 0.325s;
+  &:hover {
+    background-color: #d9d9d9;
+  }
+`;
+
 export const ListProducts = styled.div`
   display: grid;
   
@@ -124,17 +153,15 @@ export const ListProducts = styled.div`
   background-color: transparent;
 `;
 
-export const Image = styled.img`
-  display: flex;
-
-  width: 22px;
-  height: 22px;
+export const ImageProduct = styled(Image)`
+  
 `;
 
 export const ItemProduct = styled.div`
   display: flex;
 
   justify-content: space-between;
+  align-items: center;
 
   padding: 66px 19px;
   height: 95px;
@@ -149,6 +176,11 @@ export const ItemProduct = styled.div`
 `;
 
 export const Description = styled.p`
+  width: 133px;
+  height: 33px;
+
+  margin-left: 21px;
+
   font-style: normal;
   font-weight: 400;
   font-size: 13px;
@@ -157,10 +189,20 @@ export const Description = styled.p`
 
 `;
 
+export const Separator = styled.div`
+  height: 80%;
+  border: 1px solid #d9d9d9;
+`;
+
 export const ContainerActions = styled.div`
   display: flex;
+  flex-direction: row;
 
-  width: 50px;
+  align-items: center;
+  justify-content: space-around;
+
+  border: 1px solid #000;
+
   height: 19px;
 
   background: #FFFFFF;
@@ -169,17 +211,21 @@ export const ContainerActions = styled.div`
 `;
 
 export const Quantity = styled.p`
-  font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
+font-style: normal;
+font-weight: 400;
+font-size: 8px;
 
-  color: #000000;  
+padding: 8px;
+
+color: #000000;
 `;
 
 export const Price = styled.p`
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
+
+  margin-right: 15px;
 
   color: #000000;
 `;

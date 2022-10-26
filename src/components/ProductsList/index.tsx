@@ -23,6 +23,7 @@ interface ProductsListProps {
 const ProductsList = () => {
   const [products, setProducts] = useState<ProductsListProps[] | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
+  
   useEffect(() => {
     setLoading(true);
     const fakeProducts: ProductsListProps[] = [
@@ -89,7 +90,7 @@ const ProductsList = () => {
             className='thing' 
             key={idx}
           >
-            <Content >
+            <Content>
               <ProductImage 
                 src={i.image} 
                 alt='' 

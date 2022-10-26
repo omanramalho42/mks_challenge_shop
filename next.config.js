@@ -4,4 +4,8 @@ const nextConfig = {
   swcMinify: true,
 }
 
-module.exports = nextConfig
+const images = {
+  domains: ['static.anurbanshop.com.br'],
+}
+
+module.exports = {nextConfig, images }
